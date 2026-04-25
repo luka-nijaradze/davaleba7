@@ -6,8 +6,8 @@ const app = express();
 
 app.use(express.json());
 
-const directorRoutes = require("./routes/director.route");
-const movieRoutes = require("./routes/movie.route");
+const directorRoutes = require("./directors/director.route");
+const movieRoutes = require("./movies/movie.route");
 
 app.use("/directors", directorRoutes);
 app.use("/movies", movieRoutes);
@@ -23,3 +23,4 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log("Server running on http://localhost:3000");
   });
 });
+  
